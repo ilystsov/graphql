@@ -13,6 +13,12 @@ class Product:
 
 @strawberry.input
 class ProductInput:
+    """
+    Хорошим тоном в GraphQL является
+    использование таких Input классов.
+    Отделяем сущность бизнес-логики Product от сущности,
+    которую присылает пользователь.
+    """
     name: str
     price: Optional[float] = None
 

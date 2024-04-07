@@ -28,3 +28,6 @@ class ProductInterface(Protocol):
     def update_price(self, id_: str, price: float) -> "Product":
         """Обновить цену продукта."""
 
+    @abstractmethod
+    def get_product_by_id(self, id_: str) -> "Product":
+        """Получить продукт по его id."""

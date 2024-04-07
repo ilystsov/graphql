@@ -14,14 +14,18 @@ class CartInterface(Protocol):
         """Создать корзину."""
 
     @abstractmethod
-    def delete(self, product_id: str) -> "Cart":
+    def delete(self, cart_id: str) -> "Cart":
         """Удалить корзину."""
 
     @abstractmethod
-    def add_product(self, product_id: str) -> "Cart":
+    def add_product(self, cart_id: str, product_id: str) -> "Cart":
         """Добавить продукт корзину."""
 
     @abstractmethod
-    def change_product_quantity(self, product_id: str, quantity: int) -> "Cart":
+    def change_product_quantity(self, cart_id: str, product_id: str, quantity: int) -> "Cart":
         """Изменить кол-во товаров в корзине."""
+
+    @abstractmethod
+    def get_cart_by_id(self, cart_id: str) -> "Cart":
+        """Получить корзину по её id."""
 
